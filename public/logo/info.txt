@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: IBMPlexMono-Thin
+font link: https://fonts.google.com/specimen/IBM+Plex+Mono
+font author: Mike Abbink
+font author site: https://www.mikeabbink.com/
+
+
+icon designer: Christian Shannon
+icon designer link: /mr_wibbles
+        
+{"bg":"#1C40DB","icon":"#CECFD0","font":"#CECFD0","slogan":"#e2e3e4"}
+      

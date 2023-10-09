@@ -1,0 +1,14 @@
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = f.input :email,    wrapper: :input_group, append: 'fas fa-envelope', label: false
+  = f.input :password, wrapper: :input_group, append: 'fas fa-lock',     label: false
+  .row
+    .col-8
+      - if devise_mapping.rememberable?
+        .icheck-primary
+          %input#user_remember_me{:type => "checkbox", :name => 'user[remember_me]'}
+          %label{:for => "user_remember_me"}
+            Remember Me
+    .col-4
+      = f.button :submit, "Sign In", class: 'btn-primary btn-block'
+
+= render "users/shared/links"

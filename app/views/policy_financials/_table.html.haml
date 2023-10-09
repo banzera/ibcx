@@ -1,0 +1,23 @@
+%table.table.table-sm.table-striped
+  %thead
+    %tr
+      %th{:style => "width: 10px"} #
+      %th=PolicyFinancial.human_attribute_name(:cash_value)
+      %th=PolicyFinancial.human_attribute_name(:loan_payoff)
+      %th=PolicyFinancial.human_attribute_name(:net_cash_value)
+      %th=PolicyFinancial.human_attribute_name(:cost_basis)
+      %th=PolicyFinancial.human_attribute_name(:dividend_earned)
+      %th=PolicyFinancial.human_attribute_name(:dividend_earned_at)
+      %th=PolicyFinancial.human_attribute_name(:loan_balance)
+      %th=PolicyFinancial.human_attribute_name(:loan_interest_rate)
+      %th=PolicyFinancial.human_attribute_name(:annual_premium)
+      %th=PolicyFinancial.human_attribute_name(:paid_to)
+      %th=PolicyFinancial.human_attribute_name(:stipulated_annual_premium)
+      %th=PolicyFinancial.human_attribute_name(:total_premiumn_collected)
+      %th=PolicyFinancial.human_attribute_name(:total_premiumn_collected_as_of)
+      %th=PolicyFinancial.human_attribute_name(:maximum_annual_premium_limit)
+      %th=PolicyFinancial.human_attribute_name(:minimum_annual_premium_required)
+      %th=PolicyFinancial.human_attribute_name(:updated_at)
+  %tbody
+    = render collection
+

@@ -1,0 +1,20 @@
+%p#notice= notice
+
+= render_datatable FinancesDatatable.new, buttons: false, pagination: false, entries: false
+
+%table.table.table-sm.table-striped
+  %thead
+    %tr
+      %th{:style => "width: 10px"} #
+      %th Policy
+      %th Premium Due
+      %th Premium Goal
+      %th Premium Min
+  %tbody
+    - PolicyFinancial.latest.order(:paid_to).each_with_index do |pf, i|
+      %tr
+        %td #{i+1}.
+        %td=link_to pf.policy.number, policy_path(pf.policy)
+        %td{class: date_proximity(pf.paid_to)}=pf.paid_to&.to_fs(:american)
+        %td=pf.annual_premium.format
+        %td=(pf.annual_premium - pf.stipulated_annual_premium + pf.minimum_annual_premium_required).format

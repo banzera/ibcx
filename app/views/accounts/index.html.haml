@@ -1,0 +1,25 @@
+%h1 Listing accounts
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th User
+      %th Provider
+      %th Username
+      %th
+      %th
+      %th
+
+  %tbody
+    - @accounts.each do |account|
+      %tr
+        %td= account.user_id
+        %td= account.provider
+        %td= account.username
+        %td= link_to 'Show', account
+        %td= link_to 'Edit', edit_account_path(account)
+
+        %td= link_to 'Update Policies', update_all_account_path(account), method: :post, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Deactivate', account, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br

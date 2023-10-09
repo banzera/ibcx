@@ -1,0 +1,24 @@
+%p#notice= notice
+
+.card
+  .card-header
+    %h3.card-title General Info
+  .card-body.p-0
+    = render Olivander::Components::ResourceShowComponent.new(@policy, [])
+
+.card
+  .card-header
+    %h3.card-title Components
+  .card-body.p-0
+    = render partial: 'policy_details/table', locals: {details: @policy.current_details}
+
+.card
+  .card-header
+    %h3.card-title Financials
+    .card-tools
+      %a.btn.btn-tool{title: "History", href: history_policy_path(@policy)}
+        %i.fas.fa-history
+  .card-body.p-0
+    = render partial: 'policy_financials/table', locals: {collection: @policy.current_financials}
+
+= link_to 'Back', policies_path

@@ -1,0 +1,18 @@
+
+
+%table.table.table-sm.table-striped
+  %thead
+    %tr
+      %th{:style => "width: 10px"} #
+      %th Policy Number
+      %th Insured
+      %th Issue Date
+
+  %tbody
+    - @policies.each_with_index do |policy, i|
+      %tr
+        %td #{i+1}.
+        %td= link_to policy.number, policy
+        %td= policy.primary_insureds_name
+        %td= policy.issue_date&.to_fs(:american)
+%br

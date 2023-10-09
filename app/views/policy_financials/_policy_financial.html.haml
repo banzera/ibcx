@@ -1,0 +1,18 @@
+%tr
+  %td #{policy_financial_counter+1}.
+  %td=policy_financial.cash_value&.format
+  %td=policy_financial.loan_payoff&.format
+  %td=policy_financial.net_cash_value&.format
+  %td=policy_financial.cost_basis&.format
+  %td=policy_financial.dividend_earned&.format
+  %td=policy_financial.dividend_earned_at
+  %td=policy_financial.loan_balance&.format
+  %td=policy_financial.loan_interest_rate
+  %td=policy_financial.annual_premium&.format
+  %td=policy_financial.paid_to&.to_fs(:american)
+  %td=policy_financial.stipulated_annual_premium&.format
+  %td=policy_financial.total_premiumn_collected&.format
+  %td=policy_financial.total_premiumn_collected_as_of&.to_fs(:american)
+  %td=policy_financial.maximum_annual_premium_limit&.format
+  %td=policy_financial.minimum_annual_premium_required&.format
+  %td=policy_financial.updated_at.to_fs(:american)
