@@ -105,3 +105,5 @@ gem "cancancan", "~> 3.5"
 gem "mechanize", "~> 2.9"
 gem "money-rails", "~> 1.15"
 gem "american_date", "~> 1.3"
+
+gem "phlex-rails", "~> 1.0"

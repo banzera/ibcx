@@ -8,6 +8,12 @@ Bundler.require(*Rails.groups)
 
 module Ibcx
   class Application < Rails::Application
+
+    # Load Phlex resources
+    config.autoload_paths << "#{root}/app/views"
+    config.autoload_paths << "#{root}/app/views/layouts"
+    config.autoload_paths << "#{root}/app/views/components"
+
     config.force_ssl = true
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0

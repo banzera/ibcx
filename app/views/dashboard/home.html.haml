@@ -1,0 +1,59 @@
+%p#notice= notice
+
+.row
+  .col-lg-3.col-6
+    = render SmallBoxComponent.new(title: @total_cash_value,
+                   subtitle: "Total Cash Value",
+                   icon: 'dollar-sign',
+                   link_to: detail_path,
+                   style: :info)
+
+  .col-lg-3.col-6
+    = render SmallBoxComponent.new(title: @net_cash_value,
+                  subtitle: "Net Cash Value",
+                  icon: 'dollar-sign',
+                  link_to: detail_path,
+                  style: :success)
+
+  .col-lg-3.col-6
+    = render SmallBoxComponent.new(title: @total_outstanding_loan,
+                  subtitle: "Total Outstandiing Loan",
+                  icon: 'dollar-sign',
+                  link_to: detail_path,
+                  style: :warning)
+  .col-lg-3.col-6
+    = render SmallBoxComponent.new(title: @dividend_earned,
+                  subtitle: "Dividend Earned",
+                  icon: 'dollar-sign',
+                  link_to: detail_path,
+                  style: :danger)
+
+  .col-12
+    = render CardComponent.new(title: "Death Benefit Summary", style: [:secondary], tools: :none) do
+      %table.table.table-bordered.table-hover
+        %thead
+          %tr
+            %th Insured
+            %th # of Policies
+            %th Total DB
+        %tbody
+          - Policy.all.group_by(&:primary_insureds_name).each do |insured, policies|
+            %tr{"aria-expanded" => "false", "data-widget" => "expandable-table"}
+              %td=insured
+              %td=policies.size
+              %td.text-right
+                - totals = policies.collect do |p| p.current_details.where(name: 'Total:').take end
+                - sum    = totals.sum(&:face_amount_cents)
+                = Money.new(sum).format
+
+            %tr.expandable-body.d-none
+              %td{:colspan => "5"}
+                .row
+                  .col-12
+                    - policies.each do |p|
+                      .row
+                        .col-2
+                          %span=p.number
+                        .col-3
+                          =p.current_details.where(name: "Total:").take.face_amount.format
+
