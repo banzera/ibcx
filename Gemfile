@@ -71,11 +71,11 @@ group :test do
   gem "webdrivers"
 end
 
-gem "pry-rails"
-gem "pry-byebug"
-gem "better_errors"
-gem "binding_of_caller"
-gem "awesome_print"
+gem "pry-rails", "~> 0.3.9"
+gem "pry-byebug", "~> 3.10"
+gem "better_errors", "~> 2.10"
+gem "binding_of_caller", "~> 1.0"
+gem "awesome_print", "~> 1.9"
 
 gem "five-two-nw-olivander"
 
@@ -85,13 +85,18 @@ gem "american_date", "~> 1.3"
 
 gem "rack-mini-profiler"
 
+# gem "effective_datatables", "~> 4.18"
+
 gem "delayed_job_active_record"
+gem 'fillable-pdf'
 
 gem "pg_search"
 gem "fx"
 gem "scenic"
 gem "lograge"
 gem "colorize"
+
+gem "rails_semantic_logger", "~> 4.12"
 
 gem "omniauth-facebook"
 gem 'omniauth-rails_csrf_protection'
@@ -107,10 +112,6 @@ gem "cancancan", "~> 3.5"
 gem "simple_form", "~> 5.2"
 
 gem "kt-paperclip", "~> 7.2"
-
-gem "mechanize", "~> 2.9"
-gem "money-rails", "~> 1.15"
-gem "american_date", "~> 1.3"
 
 gem "phlex-rails", "~> 1.0"
 
