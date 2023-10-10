@@ -85,6 +85,7 @@ gem "american_date", "~> 1.3"
 
 gem "rack-mini-profiler"
 
+gem "delayed_job_active_record"
 
 gem "pg_search"
 gem "fx"
