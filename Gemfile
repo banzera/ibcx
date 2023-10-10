@@ -83,3 +83,17 @@ gem "fx"
 gem "scenic"
 gem "lograge"
 gem "colorize"
+
+
+gem "omniauth-facebook"
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-google-oauth2'
+
+# gem "phlex-rails", "~> 1.0"
+gem "font-awesome-rails", "~> 4.7"
+
+gem "devise", "~> 4.9"
+
+gem "five-two-nw-olivander"
+
+gem "simple_form", "~> 5.2"

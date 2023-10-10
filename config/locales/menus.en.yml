@@ -1,0 +1,16 @@
+en:
+  menus:
+    default_icon: fa fa-certificate
+    clients:
+      text: Clients
+    dashboard:
+      icon: fa fa-wallet
+    requests:
+      icon: fa fa-copy
+    accounts:
+      icon: fa fa-university
+    policies:
+      icon: fa fa-tachometer-alt
+      policy:
+        text: Policy
+        icon: fas fa-handshake

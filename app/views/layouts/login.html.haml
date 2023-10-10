@@ -1,0 +1,22 @@
+!!!
+%html{:lang => "en"}
+  = render partial: 'layouts/olivander/adminlte/head'
+
+  %body.hold-transition.login-page
+    .login-box
+      .card.card-outline.card-primary
+        .card-header.text-center
+          %a.h1{:href => root_path}
+            - d_opts = { alt: "AURORA Logo", height: "60px" }
+            = image_tag('/logo/vector/image.svg', d_opts)
+        .card-body
+          %p.login-box-msg Sign in to start your session
+          - content_for :scripts do
+            :coffee
+              $(document).ready () ->
+                flashToast(#{flash.to_json.html_safe})
+
+          = yield
+
+    = javascript_include_tag 'application'
+    = yield :scripts
