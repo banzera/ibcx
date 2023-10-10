@@ -1,5 +1,5 @@
 class PoliciesController < ApplicationController
-  before_action :set_policy, only: %i[ show fetch history]
+  load_and_authorize_resource
 
   def index
     @policies = Policy.all
