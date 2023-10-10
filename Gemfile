@@ -101,3 +101,7 @@ gem "simple_form", "~> 5.2"
 gem "kt-paperclip", "~> 7.2"
 
 gem "cancancan", "~> 3.5"
+
+gem "mechanize", "~> 2.9"
+gem "money-rails", "~> 1.15"
+gem "american_date", "~> 1.3"
