@@ -119,6 +119,8 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     debug_inspector (1.1.0)
+    delayed_job (4.1.11)
+      activesupport (>= 3.0, < 8.0)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -387,6 +389,14 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-delayed_job (5.12.0)
+      delayed_job (>= 4.0)
+      sentry-ruby (~> 5.12.0)
+    sentry-rails (5.12.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.12.0)
+    sentry-ruby (5.12.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -482,6 +492,8 @@ DEPENDENCIES
   redis (~> 4.0)
   scenic
   selenium-webdriver
+  sentry-delayed_job
+  sentry-rails (~> 5.12)
   simple_form (~> 5.2)
   sprockets-rails
   stimulus-rails

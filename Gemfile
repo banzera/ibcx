@@ -112,3 +112,6 @@ gem "money-rails", "~> 1.15"
 gem "american_date", "~> 1.3"
 
 gem "phlex-rails", "~> 1.0"
+
+gem "sentry-rails", "~> 5.12"
+gem "sentry-delayed_job"
