@@ -68,39 +68,44 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
+  gem "webdrivers"
 end
+
 gem "pry-rails"
+gem "pry-byebug"
+gem "better_errors"
+gem "binding_of_caller"
+gem "awesome_print"
+
+gem "five-two-nw-olivander"
+
+gem "mechanize", "~> 2.9"
+gem "money-rails", "~> 1.15"
+gem "american_date", "~> 1.3"
+
 gem "rack-mini-profiler"
 
-group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "pry-byebug"
-end
+
 gem "pg_search"
 gem "fx"
 gem "scenic"
 gem "lograge"
 gem "colorize"
 
-
 gem "omniauth-facebook"
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
 
-# gem "phlex-rails", "~> 1.0"
+gem "phlex-rails", "~> 1.0"
 gem "font-awesome-rails", "~> 4.7"
 
 gem "devise", "~> 4.9"
 
-gem "five-two-nw-olivander"
+gem "cancancan", "~> 3.5"
 
 gem "simple_form", "~> 5.2"
 
 gem "kt-paperclip", "~> 7.2"
-
-gem "cancancan", "~> 3.5"
 
 gem "mechanize", "~> 2.9"
 gem "money-rails", "~> 1.15"
