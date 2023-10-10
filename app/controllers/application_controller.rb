@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   layout 'olivander/adminlte/main'
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   before_action do
     @context = Ibcx::ApplicationContext.build
