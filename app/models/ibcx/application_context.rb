@@ -1,4 +1,8 @@
 module Ibcx
+  class RouteBuilder
+    include Olivander::Resources::RouteBuilder
+  end
+
   class ApplicationContext
     include Rails.application.routes.url_helpers
 
@@ -12,7 +16,7 @@ module Ibcx
           context.logo.alt        = 'Logo'
           context.company.name    = 'IBCx'
           context.menu_items      = builder.build_menu_items
-          # context.route_builder = ::Erp::RouteBuilder
+          context.route_builder = Ibcx::RouteBuilder
           context.sign_out_path = builder.destroy_user_session_path
         end
       end

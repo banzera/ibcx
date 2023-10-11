@@ -1,0 +1,12 @@
+%h1 New Repayment Request
+
+.row
+  .col-3
+    = simple_form_for [@policy, @repayment_request], html: {'data-turbo': false} do |f|
+      = f.input :amount
+      = f.input :dom
+      = f.input :beginning
+      = f.submit
+  .col-9
+    =embed_pdf_tag(@pdf)
+
