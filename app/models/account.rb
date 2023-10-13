@@ -1,4 +1,5 @@
 class Account < ApplicationRecord
+  include Olivander::Resources::AutoFormAttributes
 
   belongs_to :user
 

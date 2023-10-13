@@ -1,5 +1,3 @@
-%h1 Listing accounts
-
 %table.table.table-striped
   %thead
     %tr
@@ -23,3 +21,21 @@
         %td= link_to 'Deactivate', account, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
+
+-#= render Olivander::Components::TablePortletComponent.new(@accounts)
+-# @builder = options[:builder]
+-# @title = options[:title] || ''
+-# @card_type = options[:card_type] || 'card-default'
+-# @background = options[:background]
+-# @header_background = options[:header_background]
+-# @turbo_frame = options[:turbo_frame]
+-# @max_height = options[:max_height]
+-# @headers = options[:headers].nil? ? true : options[:headers]
+-# @id = options[:id]
+
+= collection_component_builder_for(Olivander::Components::TablePortletComponent,
+  @accounts, max_height: '350px', title: 'Accounts', background: 'card-primary') do |b|
+  - b.field(:user) do |t|
+    \
+  - b.field(:provider)
+  - b.field(:username)
