@@ -97,3 +97,5 @@ gem "devise", "~> 4.9"
 gem "five-two-nw-olivander"
 
 gem "simple_form", "~> 5.2"
+
+gem "kt-paperclip", "~> 7.2"
