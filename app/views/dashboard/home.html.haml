@@ -29,6 +29,26 @@
                   style: :danger)
 
   .col-12
+    = render CardComponent.new(title: "Cash Value By Policy", style: [:primary], tools: :none) do
+      %table.table.table-bordered.table-hover
+        %thead
+          %tr
+            %th{:style => "width: 10px"} #
+            %th Policy Number
+            %th Total Cash Value
+            %th Loan Amount
+            %th Available Cash Value
+
+        %tbody
+          - Policy.all.each_with_index do |policy, i|
+            - cf = policy.current_financials.take
+            %tr
+              %td #{i+1}.
+              %td= link_to policy.number, policy
+              %td.text-right= cf.cash_value.format
+              %td.text-right= cf.loan_payoff.format
+              %td.text-right= cf.net_cash_value.format
+  .col-12
     = render CardComponent.new(title: "Death Benefit Summary", style: [:secondary], tools: :none) do
       %table.table.table-bordered.table-hover
         %thead
