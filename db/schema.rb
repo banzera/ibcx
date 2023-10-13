@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_10_153309) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_13_135609) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -105,6 +105,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_10_153309) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["retrieval_id"], name: "index_policy_financials_on_retrieval_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.bigint "policy_id"
+    t.string "request_type"
+    t.jsonb "data"
+    t.string "document_file_name"
+    t.string "document_content_type"
+    t.bigint "document_file_size"
+    t.datetime "document_updated_at"
+    t.index ["policy_id"], name: "index_requests_on_policy_id"
   end
 
   create_table "retrievals", force: :cascade do |t|
