@@ -1,0 +1,14 @@
+= simple_form_for @request do |f|
+  - if @request.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@request.errors.count, "error")} prohibited this request from being saved:"
+      %ul
+        - @request.errors.full_messages.each do |message|
+          %li= message
+
+
+  = f.input :policy, collection: [Policy.all] #accessible_by(current_ability)]
+  = f.input :request_type, collection: ['Repayment', 'Loan Request']
+
+  .actions
+    = f.submit 'Save'

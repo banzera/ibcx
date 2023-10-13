@@ -28,6 +28,7 @@ module Ibcx
         build_menu_item(key: "dashboard", url: root_path, is_module: true),
         build_menu_item(key: 'policies', url: policies_path, is_module: false),
         build_menu_item(key: 'accounts', url: accounts_path, is_module: true),
+        build_menu_item(key: 'requests', url: requests_path, is_module: false),
       ]
     end
 

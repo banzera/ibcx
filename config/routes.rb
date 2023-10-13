@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :requests do
+  end
+
   resources :policies, only: [:index, :show] do
 
     resources :repayment_requests, path: 'rr' do
