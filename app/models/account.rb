@@ -7,6 +7,6 @@ class Account < ApplicationRecord
   encrypts :password
 
   def service_adapter
-    MTL.instance_for(self)
+    MTL::ScrapeService.instance_for(self)
   end
 end

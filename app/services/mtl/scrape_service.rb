@@ -1,4 +1,5 @@
-  class MTL < Mechanize
+module MTL
+  class ScrapeService < Mechanize
 
   MTL_BASE_URL    = "https://www.mutualtrust.com/"
   MTL_HOME_URL    = MTL_BASE_URL + "Default.aspx"
