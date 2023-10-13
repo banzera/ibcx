@@ -119,3 +119,5 @@ gem "sentry-rails", "~> 5.12"
 gem "sentry-delayed_job"
 
 gem "dotenv-rails", "~> 2.8"
+
+gem "tldr", "~> 0.9.3"
