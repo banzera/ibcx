@@ -4,8 +4,11 @@
   .col-3
     = simple_form_for [@policy, @repayment_request], html: {'data-turbo': false} do |f|
       = f.input :amount
-      = f.input :dom
-      = f.input :beginning
+      = f.input :day_of_month
+      = f.input :deduction_begin_date
+
+      = f.input :financial_institution, collection: FinancialInstitution.all
+
       = f.submit
   .col-9
     =embed_pdf_tag(@pdf)

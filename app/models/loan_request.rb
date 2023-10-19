@@ -1,4 +1,4 @@
-class RepaymentRequest # < ApplicationRecord
+class LoanRequest # < ApplicationRecord
   extend ActiveModel::Naming
   include ActiveModel::Attributes
   include ActiveModel::AttributeAssignment
@@ -6,11 +6,9 @@ class RepaymentRequest # < ApplicationRecord
 
   delegate_missing_to :@policy
 
-  attribute :amount,               :integer, default: 500
-  attribute :day_of_month,         :integer, default: 1
-  attribute :deduction_begin_date, :date, default: -> { Date.today }
-
-  attribute :financial_institution
+  attribute :amount,    :integer, default: 500
+  attribute :email,     :string
+  attribute :phone,     :string
 
   def initialize(policy)
     @policy = policy

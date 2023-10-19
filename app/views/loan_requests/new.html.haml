@@ -1,0 +1,12 @@
+%h1 New Loan Request for Policy #{@policy.number}
+
+.row
+  .col-3
+    = simple_form_for [@policy, @loan_request], html: {'data-turbo': false} do |f|
+      = f.input :email
+      = f.input :phone
+      = f.input :amount
+      = f.submit
+  .col-9
+    =embed_pdf_tag(@pdf)
+

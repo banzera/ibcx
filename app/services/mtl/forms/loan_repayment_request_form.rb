@@ -2,7 +2,7 @@ module MTL
   module Forms
     class LoanRepaymentRequestForm < MTLRequestForm
       def field_map
-        {
+        ActiveSupport::HashWithIndifferentAccess.new({
           policy_number:                 ".P[1].TextField2[0]",
           owner_name:                    ".P[2].TextField2[0]",
           amount:                        ".P[3].NumericField1[0]",
@@ -14,7 +14,7 @@ module MTL
           financial_institution_routing: ".TextField2[2]",
           financial_institution_acct:    ".TextField2[3]",
           insured_name:                  ".P[23].TextField2[0]",
-        }
+        })
       end
 
       def initialize

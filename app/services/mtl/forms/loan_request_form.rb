@@ -1,10 +1,12 @@
 module MTL
   module Forms
     class LoanRequestForm < MTLRequestForm
+      include ActiveSupport::NumberHelper
+
       X = "X"
 
       def field_map
-        {
+        ActiveSupport::HashWithIndifferentAccess.new({
           phone:                    ".P[0].Phone[0]",
           email:                    ".P[4].Email[0]",
           insured:                  ".Insured[0]",
@@ -29,7 +31,7 @@ module MTL
           # ".P[19].QRCodeBarcode1[0]"
           # ".TextField[0]"
           # ".PremiumDue[0]"
-        }
+        })
       end
 
 
@@ -41,9 +43,9 @@ module MTL
         set_field mf(:maximum_loan_amount), X
       end
 
-      def stipulate_loan_amount!(amt=BLANK)
+      def stipulate_loan_amount!(amt=0)
         set_field mf(:stipulated_loan_amount), X
-        set_field mf(:loan_amount), amt
+        set_field mf(:loan_amount), number_to_delimited(amt)
       end
 
       def direct_premium_to!(policy_number: BLANK, due_date: nil)

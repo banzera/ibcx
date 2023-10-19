@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   resources :policies, only: [:index, :show] do
 
+    resources :loan_requests, path: 'lr' do
+    end
+
     resources :repayment_requests, path: 'rr' do
     end
 
