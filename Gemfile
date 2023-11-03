@@ -62,6 +62,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "rack-livereload"
+  gem "guard-livereload"
 end
 
 group :test do
@@ -112,8 +114,6 @@ gem "cancancan", "~> 3.5"
 gem "simple_form", "~> 5.2"
 
 gem "kt-paperclip", "~> 7.2"
-
-gem "phlex-rails", "~> 1.0"
 
 gem "sentry-rails", "~> 5.12"
 gem "sentry-delayed_job"

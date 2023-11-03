@@ -5,6 +5,14 @@ Rails.application.configure do
   # accept connections from any .test domain
   config.hosts << '.test'
 
+  config.middleware.insert_before Rack::Runtime, Rack::LiveReload,
+    no_swf: true,
+    live_reload_scheme: :wss,
+    live_reload_port: 443,
+    protocol: :https,
+    port: 443,
+    host: 'livereload.test'
+
   # make active record be quieter
   config.after_initialize do
     ActiveRecord::Base.logger = Rails.logger.clone
