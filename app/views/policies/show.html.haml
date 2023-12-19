@@ -21,4 +21,10 @@
   .card-body.p-0
     = render partial: 'policy_financials/table', locals: {collection: @policy.current_financials}
 
+.card
+  .card-header
+    %h3.card-title Premiums
+  .card-body.p-0
+    = render partial: 'premium_payments/table', locals: {details: @policy.premium_payments}
+
 = link_to 'Back', policies_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_19_201956) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_18_173349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -116,6 +116,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_19_201956) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["retrieval_id"], name: "index_policy_financials_on_retrieval_id"
+  end
+
+  create_table "premium_payments", force: :cascade do |t|
+    t.bigint "policy_id"
+    t.integer "amount_cents"
+    t.string "amount_currency", default: "USD", null: false
+    t.date "paid_at"
+    t.index ["policy_id"], name: "index_premium_payments_on_policy_id"
   end
 
   create_table "requests", force: :cascade do |t|

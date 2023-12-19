@@ -1,0 +1,24 @@
+%table.table.table-sm.table-striped.w50
+  %thead
+    %tr
+      %th{:style => "width: 10px"} #
+      %th
+      %th.text-right Amount
+  %tbody
+    = render details
+    %tr
+      %td
+      %td Total Cash Outlay
+      %td.text-right=@tco&.format
+    %tr
+      %td
+      %td Current Cash Value
+      %td.text-right=@ccv&.format
+    %tr
+      %td
+      %td Delta
+      %td.text-right
+        =surround('(', ')') do
+          =number_to_percentage @cv_to_capital
+        = (@tco - @ccv).format
+

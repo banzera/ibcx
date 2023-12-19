@@ -6,6 +6,7 @@ class Policy < ApplicationRecord
   belongs_to :account
 
   has_many :retrievals
+  has_many :premium_payments
 
   has_many :details,    through: :retrievals, class_name: 'PolicyDetail',    dependent: :destroy
   has_many :financials, through: :retrievals, class_name: 'PolicyFinancial', dependent: :destroy

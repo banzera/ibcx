@@ -18,3 +18,21 @@
         %td{class: date_proximity(pf.paid_to)}=pf.paid_to&.to_fs(:american)
         %td=pf.annual_premium.format
         %td=(pf.annual_premium - pf.stipulated_annual_premium + pf.minimum_annual_premium_required).format
+
+
+%table.table.table-sm.table-striped
+  %thead
+    %tr
+      %th Year
+      - @policy_numbers.each do |pn|
+        %th=pn
+
+  %tbody
+    - @pp.each do |yr,v|
+      %tr
+        %td= yr
+        - v.each do |pn, v|
+          %td=v&.format
+
+
+

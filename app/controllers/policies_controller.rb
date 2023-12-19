@@ -7,6 +7,10 @@ class PoliciesController < ApplicationController
 
   def show
     @page_title = @policy.number
+    @tco = @policy.premium_payments.map(&:amount).sum
+    @ccv = @policy.current_financials.take.cash_value
+    @cv_to_capital = @ccv / @tco
+
   end
 
   def fetch
